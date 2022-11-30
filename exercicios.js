@@ -170,5 +170,5 @@ function retornaArrayOrdenadoPorData(consultas){
    const arrayOrganizado = consultas.sort(function(a,b){
       return dataFormatada(a.dataDaConsulta) < dataFormatada(b.dataDaConsulta);
    });
-   return arrayOrganizado;
+//   return arrayOrganizado;
 }
