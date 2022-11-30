@@ -5,37 +5,63 @@
 
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
-   
+   return array.length;
 }
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  
+  const novoArray = [];
+  for(let i = array.length - 1; i>=0; i--){
+     novoArray.push(array[i]);
+  }
+  return novoArray;
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+  return array.sort(function(a,b){return a-b});
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+   /* const novoArray = [];
+   for(let i = 0; i < array.length; i++){
+      (array[i] % 2 === 0) && novoArray.push(array[i]);
+   }
+   return novoArray; */
+   const novoArray = array.filter((numero) =>{
+      return numero % 2 === 0;
+   });
+   return novoArray;
 }
+  
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+ const numerosElevadosADois = array.filter((numero)=>{
+    return numero % 2 === 0;
+ }).map((numero)=>{
+    return numero ** 2;
+ });
+ return numerosElevadosADois;
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+  const novoArray = array.sort(function(a,b){return a-b;});
+  return novoArray[novoArray.length-1];
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+   const numeroMaior = Math.max(num1,num2);
+   const maiorEDisivivelPeloMenor = (num1 % num2 === 0 || num2 % num1 ==0) ? true : false;
+   const novoObj ={
+      maiorNumero: numeroMaior,
+      maiorDivisivelPorMenor: maiorEDisivivelPeloMenor,
+      diferenca: Math.abs(num1-num2)
+   }
+   return novoObj;
 }
 
 // EXERCÍCIO 08
