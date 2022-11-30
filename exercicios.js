@@ -19,7 +19,20 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  return array.sort(function(a,b){return a-b});
+//  return array.sort(function(a,b){return a-b});
+   const arrayOrdenado = [array[0]];
+   for(let i = 1; i <= array.length -1; i++){
+      for(let index in arrayOrdenado){
+         if(array[i] <= arrayOrdenado[index]){
+            arrayOrdenado.splice(index,0,array[i]);
+            break;
+         }else{
+            arrayOrdenado.push(array[i]);
+            break;
+         }
+      }
+   }
+   return arrayOrdenado;
 }
 
 // EXERCÍCIO 04
@@ -103,9 +116,7 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-
-   const frase = `Venha assistir ao filme ${filme.nome},de ${filme.ano},dirigido por ${filme.diretor} e  estrelado por ${filme.atores}.` 
-   return frase.replaceAll(",", ", ")
+   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`;
 }
 
 // EXERCÍCIO 12
