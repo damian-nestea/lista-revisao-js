@@ -175,11 +175,11 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 function retornaArrayOrdenadoPorData(consultas){
    const dataFormatada = (data) =>{
       const arrayData = data.split("/");
-      const novaData = new Date(arrayData[2], arrayData[1]-1, arrayData[0]);
+      const novaData = new Date(arrayData[2], arrayData[1], arrayData[0]);
       return novaData; 
-   }
-   const arrayOrganizado = consultas.sort(function(a,b){
-      return dataFormatada(a.dataDaConsulta) < dataFormatada(b.dataDaConsulta);
-   });
-//   return arrayOrganizado;
+	}
+	const arrayOrganizado = consultas.sort(function(a,b){
+      return dataFormatada(a.dataDaConsulta) > dataFormatada(b.dataDaConsulta) ? 1: dataFormatada(a.dataDaConsulta) < dataFormatada(b.dataDaConsulta) ? -1 : 0;
+	});
+	return arrayOrganizado;
 }
